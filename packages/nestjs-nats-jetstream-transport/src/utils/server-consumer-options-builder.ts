@@ -11,6 +11,7 @@ export function serverConsumerOptionsBuilder(
     deliverTo,
     manualAck,
     ackPolicy,
+    ackWait,
     deliverPolicy,
     description,
     durable,
@@ -66,6 +67,7 @@ export function serverConsumerOptionsBuilder(
   startAtTimeDelta && opts.startAtTimeDelta(startAtTimeDelta);
   startSequence && opts.startSequence(startSequence);
   startTime && opts.startTime(startTime);
+  ackWait && opts.ackWait(ackWait);
 
   return opts;
 }
